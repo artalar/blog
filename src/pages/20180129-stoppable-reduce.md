@@ -1,42 +1,49 @@
 # Эффективная обработка данных с reduce
 
-## Приветствиие (а оно нужно?)
+## Приветствиие
+
+> (а оно нужно?)
 
 ## Введение
 
-Данная техническая повесть поможет начинающим разработчикам глубже понять и эффективнее применять инструменты обработки данных и их массивы, колекции в JavaScript (JS). Много внимания будет уделено повторению простых конструкций и особенностей языка, которые вы, скорее всего, уже знаете. При этом я так же постараюсь доступно напомнить о низкоуровневых механизмах работы интерпритатора и сборщика мусора в JS. Все это обернуто в лирическое расследование, результат которого будет для каждого свой.
+Данная техническая повесть поможет начинающим разработчикам глубже понять и эффективнее применять инструменты обработки данных и их массивы, колекции в JavaScript (JS). Много внимания будет уделено повторению простых конструкций и особенностей языка, которые вы, скорее всего, уже знаете. При этом я так же постараюсь доступно напомнить о низкоуровневых механизмах работы интерпритатора и сборщика мусора в JS. Все это обернуто в лирическое расследование, результаты которого будут для каждого свои.
 
 ### Оглавление
 
-* [while](#while)
 * [for](#for)
+* [while](#while)
 * [Array.prototype.forEach](#array.prototype.forEach)
 * [Array.prototype.map](#array.prototype.map)
 * [Array.prototype.reduce](#array.prototype.reduce)
 * [Ленивые вычисления](#lazy-evaluation)
 * [Array.prototype.stoppableReduce](#array.prototype.stoppableReduce)
+* [Трансдьюсер](#transducer)
 * [Заключение](#conclusion)
 * [Благодарности](#gratitude)
 
-## while
-
-Тут про цикл
 
 ## for
 
-Тут про сахарный цикл
+Для того что бы разбирать итерации по коллекциям в функциях высшего порядка, о которых речь пойдет ниже, давайте начнем с начала и определимся с характерными чертами циклов
+
+## while
+
+Пока...
 
 ## <a id="array.prototype.forEach">Array.prototype.forEach</a>
 
-Тут про ФП'шный сахар (ES5)
+Тут про ФП'шный сахар (ES5) - функции высшего порядка
+Для каждого...
 
 ## <a id="array.prototype.map">Array.prototype.map</a>
 
 Тут про персистентность
+Сопоставить...
 
 ## <a id="array.prototype.reduce">Array.prototype.reduce</a>
 
 Тут про гибкость
+Сворачивая...
 
 ```javascript
 Array.prototype.reduce = function(callback, defaultAccumulator) {
@@ -77,7 +84,7 @@ Array.prototype.stoppableReduce = function(callback, defaultAccumulator) {
   };
 
   for (; currentIndex < this.length; currentIndex++) {
-    if (end) break;
+    if (end === true) break;
 
     accumulator = callback(
       accumulator,
@@ -98,6 +105,8 @@ Array.prototype.stoppableReduce = function(callback, defaultAccumulator) {
 );
 // 11
 ```
+
+## <a id="transducers">Трансдьюсер</a>
 
 ## <a id="conclusion">Заключение</a>
 
