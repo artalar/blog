@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "artalar personal blog",
+  "main": "index.js",
+  "dependencies": {
+    "yaspeller": "^4.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "yaspeller src/pages -e '.md'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artalar/blog.git"
+  },
+  "author": "artalar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artalar/blog/issues"
+  },
+  "homepage": "https://github.com/artalar/blog#readme"
+}
