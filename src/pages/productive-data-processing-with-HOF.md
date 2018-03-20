@@ -111,6 +111,3 @@ Array.prototype.stoppableReduce = function(callback, defaultAccumulator) {
 ## <a id="transducers">Трансдьюсер</a>
 
 ## <a id="conclusion">Заключение</a>
-
-## <a id="gratitude">Благодарности</a>
-
