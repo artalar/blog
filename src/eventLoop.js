@@ -28,7 +28,7 @@ class TimeoutExecutor extends Thread {
   minDelay = 4;
 
   clearTimer(handle) {
-    this.activeTimers[handle] === null;
+    this.activeTimers[handle] = null;
   }
 }
 
