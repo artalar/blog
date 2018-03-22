@@ -27,12 +27,13 @@ class TimeoutExecutor extends Thread {
   activeTimers = {
     length: 0,
   };
-  expiredTasks = [];
+  expiredTasks = {};
   maxNestingLevel = 5;
   minDelay = 4;
 
   clearTimer(handle) {
     this.activeTimers[handle] = null;
+    delete this.expiredTasks[handle];
   }
 }
 
@@ -71,7 +72,7 @@ const createTimeout = (handler, timeout, args, repeat, previousHandle) => {
   timeoutExecutor.inParallel(async function() {
     await this.await(timeout);
     const task = this.activeTimers[handle];
-    if (task !== null) this.expiredTasks.push(task);
+    if (task !== null) this.expiredTasks[handle] = task;
   });
 
   return handle;
@@ -123,12 +124,14 @@ const loopExecutor = () => {
     }
   }
 
+  const expiredTasks = Object.values(TimeoutExecutor.expiredTasks);
+  TimeoutExecutor.expiredTasks = {};
   for (
-    let expiredTasks = TimeoutExecutor.expiredTasks.shift();
-    expiredTasks !== undefined;
-    expiredTasks = TimeoutExecutor.expiredTasks.shift()
+    let expiredTask = expiredTasks.shift();
+    expiredTask !== undefined;
+    expiredTask = expiredTasks.shift()
   ) {
-    tasks.push(expiredTasks);
+    tasks.push(expiredTask);
   }
 };
 
