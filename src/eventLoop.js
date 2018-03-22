@@ -1,8 +1,12 @@
 /* 
+### Event Loop by JS-like **pseudocode** (100% compatibility except "strict mode" and `Thread` class)
+
 ### TODO:
+* relevant requestIdleCallback
+* events (description for microtasks?)
 * setImmediate
 * stack
-* heap
+* heap?
 * ...
 */
 
