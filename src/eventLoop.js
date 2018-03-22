@@ -1,5 +1,5 @@
 /* 
-### Event Loop by JS-like **pseudocode** (100% compatibility except "strict mode" and `Thread` class)
+### Event Loop by JS-like **pseudocode** (~100% compatibility except "strict mode" and `Thread` class)
 
 ### TODO:
 * relevant requestIdleCallback
@@ -53,6 +53,11 @@ const createTimeout = (handler, timeout, args, repeat, previousHandle) => {
     if (repeat === true) createTimeout(handler, timeout, args, repeat, handle);
   }
 
+  /*
+    I don't know how it can be implemented by another way:
+    #7 in https://www.w3.org/TR/html/webappapis.html#timer-initialization-steps
+    `If the currently running task is a task that was created by this algorithm, then...`
+  */
   with (handler) {
     var previosNestingLevel = nestingLevel;
   }
