@@ -16,7 +16,7 @@ import {
   isRequestIdleCallbackTime,
   reflow,
   repaint,
-} from 'enviroment';
+} from 'environment';
 
 const tasks = [],
       microtasks = [],
