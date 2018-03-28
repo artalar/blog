@@ -42,6 +42,6 @@ const Button = styled.button`
 
 Все вышесказанное - только подспорье, на практике _CSS in JS_ и **SC** в частности предоставляют великолепный функционал выраженный удобными инструментами (API) для приятной ([DX](https://www.google.com/search?q=developer+experience&oq=developer+experience&sourceid=chrome&ie=UTF-8)) и эффективной реализации компонентного (модульного) подхода, а так же: динамические стили от аргументов, темы, шаблоны, расширение / перезапись базовых компонентов / стилей.
 
-* #### Про CSS in JS
-* #### Примеры API SC
-* #### Гайдлайн по SC
+* #### [Про CSS in JS](styled-components-part-2-motivation-of-css-in-js.md)
+* #### [Примеры использования](styled-components-part-3-api-examples.md)
+* #### [Гайдлайн](styled-components-part-4-guideline.md)
