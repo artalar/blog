@@ -62,7 +62,7 @@ export const ComponentList = connect(context => ({ list: context.list }))(Compon
 
 ### unstable_observedBits
 
-> информация взята из [тестов](https://github.com/facebook/react/blob/4ccf58a94dce323718540b8185a32070ded6094b/packages/react-reconciler/src/__tests__/ReactNewContext-test.internal.js#L498-L526) в официальном репозитории и [этой статьи](https://medium.com/@koba04/a-secret-parts-of-react-new-context-api-e9506a4578aa)
+> информация взята из [исходников](https://github.com/facebook/react/blob/4ccf58a94dce323718540b8185a32070ded6094b/packages/react/src/ReactContext.js#L18) и [тестов](https://github.com/facebook/react/blob/4ccf58a94dce323718540b8185a32070ded6094b/packages/react-reconciler/src/__tests__/ReactNewContext-test.internal.js#L498-L526) React, а так же [этой статьи](https://medium.com/@koba04/a-secret-parts-of-react-new-context-api-e9506a4578aa)
 
 Публично об этом еще не заявляли и в официальной документации информации об этой части API нет, но помимо вышесказанного, у `React.createContext` есть второй аргумент, принимающий функцию, а у `Consumer` есть аргумент `props`'ов `unstable_observedBits`, принимающий битовую маску сопоставления. В итоге это аналогично `shouldComponentUpdate` у `React.Component`. Разберем подробнее.
 
