@@ -109,7 +109,7 @@ const StoreContext = React.createContext(
 
 const Foo = () => (
   <StoreContext.Consumer unstable_observedBits={store.observedBits.foo}>
-    {({foo, update}) => (
+    {({foo, update}) => ( // если поменяется `bar`, этот код не выполнится
       <button
         onClick={() => update((state) => ({...state, foo: state.foo + 1}))}
       >
