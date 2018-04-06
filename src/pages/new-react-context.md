@@ -59,3 +59,61 @@ const shallowCompare = (newObj, oldObj) => {
 // ComponentList.js
 export const ComponentList = connect(context => ({ list: context.list }))(ComponentList_raw);
 ```
+
+### unstable_observedBits
+
+> информация взята из [тестов](https://github.com/facebook/react/blob/4ccf58a94dce323718540b8185a32070ded6094b/packages/react-reconciler/src/__tests__/ReactNewContext-test.internal.js#L498-L526) в официальном репозитории и [этой статьи](https://medium.com/@koba04/a-secret-parts-of-react-new-context-api-e9506a4578aa)
+
+Публично об этом еще не заявляли и в официальной документации информации об этой части API нет, но помимо вышесказанного, у `React.createContext` есть второй аргумент, принимающий функцию, а у `Consumer` есть аргумент `props`'ов `unstable_observedBits`, принимающий битовую маску сопоставления. Разберем подробнее.
+
+#### Битые маски
+[Битые маски](https://ru.wikipedia.org/wiki/Битовая_маска) применяются очень давно, в частности для сопоставления прав доступа в Linux. Суть заключается в том, что каждый бит в своей очередности на битовой маске отвечает за `true` или `false` по отношению к определенному правилу. Удобность работы с побитовыми масками заключается в том, что для обновления значения достаточно осуществить побитовую операцию оригинальной маски с маской правила, в которой для установки значения в `true` необходимо применить "ИЛИ" - `|`, где управляющий бит === `1`, а остальные `0`, а для установки значения в `false` необходимо применить "И" - `&`, где управляющий бит === `0`, а остальные `1`. Это может, по началу, звучать сложно, но на практике это простой, наглядный, а, главное, самый быстрый способ записи и управления диапазоном значений `true` \ `false`.
+
+#### Использование
+Второй аргумент `React.createContext` принимает функцию, которая на вход получает предыдущее и новое - обновленное состояние, а на выходе должна вернуть обновленную битовую маску. В свою очередь `Consumer` принимает в `unstable_observedBits` битовую маску, которая содержит биты положительных значений, отвечающих за отслеживаемые позиции `state`. При поступлении изменений `Consumer` сначала [сравнивает](https://github.com/facebook/react/blob/4ccf58a94dce323718540b8185a32070ded6094b/packages/react-reconciler/src/ReactFiberBeginWork.js#L988) обновленную битовую маску с `unstable_observedBits` и если их побитовое сложение `!== 0`, то render-prop не будет вызван. Если второй аргумент `React.createContext` и `unstable_observedBits` у `Consumer` не заданы - вызов render-prop будет происходить на любое изменение контекста.
+
+#### Пример
+
+```javascript
+const store = {
+  observedBits: {
+    foo: 0b01,
+    bar: 0b10
+  },
+  state = {
+    foo: 1,
+    bar: 1,
+  },
+  update(cb) {
+    this.state = cb(this.state);
+  }
+};
+
+const StoreContext = React.createContext(
+  store.state,
+  (prev, next) => {
+    let result = 0;
+    // поменялся `foo`
+    if (prev.foo !== next.foo) {
+      result |= store.observedBits.foo;
+    }
+    // поменялся `bar`
+    if (prev.bar !== next.bar) {
+      result |= store.observedBits.bar;
+    }
+    return result;
+  }
+);
+
+const Foo = () => (
+  <StoreContext.Consumer unstable_observedBits={store.observedBits.foo}>
+    {({foo, update}) => (
+      <button
+        onClick={() => update((state) => ({...state, foo: state.foo + 1}))}
+      >
+        increment "foo = {foo}"
+      </button>
+    )}
+  </StoreContext.Consumer>
+);
+```
