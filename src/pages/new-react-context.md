@@ -1,1 +1,2 @@
-https://github.com/CSSSR/csssr.github.io/blob/feature/2018-04-06-new-react-context/_posts/2018-04-06-new-react-context.md
+Опубликовано тут:
+> http://blog.csssr.ru/2018/04/06/new-react-context
