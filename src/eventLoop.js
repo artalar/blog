@@ -2,6 +2,7 @@
 ### Event Loop by JS-like **pseudocode** (~100% compatibility except "strict mode" and `Thread` class)
 
 ### TODO:
+* postMessage
 * relevant requestIdleCallback
 * events (description for microtasks?)
 * setImmediate
