@@ -3,6 +3,7 @@
 
 ### TODO:
 * postMessage
+* MutationObserver
 * relevant requestIdleCallback
 * events (description for microtasks?)
 * setImmediate
