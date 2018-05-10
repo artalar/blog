@@ -2,7 +2,7 @@
 
 На какую функцию должна быть ссылка в `f`, что бы код выполнился?
 
-```javascript
+```js
 f('console.log("done!")');
 ```
 
@@ -16,7 +16,7 @@ f('console.log("done!")');
 
 Результат будет `1`, почему?
 
-```javascript
+```js
 [{ а: 1 }, { а: 2 }, { а: 3 }].reduce((a, v) => {
   if (a) {
     var { а } = v;
@@ -32,7 +32,7 @@ f('console.log("done!")');
 
 Какой результат выполнения `terrrrrnaraty(0, 'test', false)({test: true})`?
 
-```javascript
+```js
 const isfunc = val => typeof val === 'function';
 const isstr = val => typeof val === 'string';
 const terrrrrnaraty = (first, second, third = undefined) => props =>
@@ -49,9 +49,31 @@ terrrrrnaraty(0, 'test', false)({ test: true });
 
 Почему результат `false`?
 
-```javascript
+```js
 (() => 'абвгеёжзийклмнопрстуфхцчшщъыьэюя')().length ===
-  (() => 'абвгеёжзийклмнопрстуфхцчшщъыьэюя')().length;
+(() => 'абвгеёжзийклмнопрстуфхцчшщъыьэюя')().length;
 // false
 ```
-<!-- `й` - это `и` с глифом -->
+<!-- `й` - это `и` с глифом -->
+
+# 5
+
+Реализуйте функцию `delayed`
+
+```js
+delayed(() => console.log(1));
+console.log(2);
+delayed(() => console.log(3));
+setTimeout(() => console.log(4));
+delayed(() => console.log(5));
+console.log(6);
+// 2
+// 6
+// 1
+// 3
+// 5
+// 4
+```
+
+<!-- `const delayed = callback => Promise.resolve().then(callback)` -->
+
