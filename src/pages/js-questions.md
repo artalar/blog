@@ -77,3 +77,13 @@ console.log(6);
 
 <!-- `const delayed = callback => Promise.resolve().then(callback)` -->
 
+# 6
+
+Необходимо реализовать функцию `arrayReverse`, в которой осуществляется проход по массиву и возврат нового массива с элементами в обратной последовательности (reverse) в один и функционально (без циклов, а с помощью встроенных методов массива), но без `Array.prototype.reverse` и `Array.prototype.reduceRight`.
+
+```js
+arrayReverse([1,2,3])
+// [3,2,1]
+```
+
+<!-- `const arrayReverse = array => array.map((v,i,a) => a[a.length - i - 1])` -->
