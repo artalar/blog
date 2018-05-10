@@ -140,3 +140,10 @@ const loopExecutor = () => {
 export const eventLoop = () => {
   while (true) loopExecutor();
 };
+
+/* 
+> заметки для статьи
+
+* асинхронная задача - задача выполнение которой будет в не текущего call stack
+
+*/
