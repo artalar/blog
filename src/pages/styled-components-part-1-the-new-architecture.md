@@ -1,12 +1,8 @@
+# Видео с докладом
+
+> https://youtu.be/eOBz3_mQwo8?list=LLAKtelC0m6GfyYcLVcujTvg
+
 <!--
-[js]
-[javascript]
-[React.js]
-[web]
-[styles]
-[sc]
-[styled-components]
--->
 
 # styled-components
 
@@ -45,3 +41,6 @@ const Button = styled.button`
 * #### [Про CSS in JS](styled-components-part-2-motivation-of-css-in-js.md)
 * #### [Примеры использования](styled-components-part-3-api-examples.md)
 * #### [Гайдлайн](styled-components-part-4-guideline.md)
+
+
+-->
