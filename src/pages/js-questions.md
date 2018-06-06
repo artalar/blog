@@ -87,3 +87,34 @@ arrayReverse([1,2,3])
 ```
 
 <!-- `const arrayReverse = array => array.map((v,i,a) => a[a.length - i - 1])` -->
+
+# 7
+
+Реализуйте функцию `cloneDeep`, которая будет осуществлять глубокое полное копирование объектов, даже с циклическими ссылками. Подсказка - она может быть асинхронной.
+
+```js
+var obj = { 1: { 2: {} } };
+obj[1][2][3] = obj;
+
+var newObj = await cloneDeep(obj);
+console.log(newObj[1][2][3] === newObj);
+// true
+```
+
+<!--
+> `MessageChannel` https://dassur.ma/things/deep-copy/
+
+```javascript
+function cloneDeep(obj) {
+  return new Promise(resolve => {
+    const {port1, port2} = new MessageChannel();
+    port2.onmessage = ev => resolve(ev.data);
+    port1.postMessage(obj);
+  });
+}
+```
+-->
+
+# 
+
+<!-- TODO: https://gist.github.com/artalar/1aa8becb645ebc202a82fa587fe2ecb8 -->
