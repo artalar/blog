@@ -1,5 +1,6 @@
 > [Видео с докладом](https://youtu.be/eOBz3_mQwo8?list=LLAKtelC0m6GfyYcLVcujTvg)
-> [Файл презентации](/artalar/blog/blob/master/src/assets/artalar_meetup 23.05.pdf)
+
+> [Файл презентации](https://github.com/artalar/blog/blob/master/src/assets/artalar_meetup 23.05.pdf)
 
 # styled-components
 
