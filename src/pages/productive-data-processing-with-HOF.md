@@ -74,6 +74,8 @@ Array.prototype.reduce = function(callback, defaultAccumulator) {
 
 Шутка! На самом деле такого метода в нативном JS нет, хотя при использовании библиотеки [Ramda](http://ramdajs.com/) его [функционал можно заполучить](http://ramdajs.com/docs/#reduced)
 
+<!-- не полная итерация приводит к деоптимизации разогретого кода, поэтому, возможно, в JS нет ленивых вычислений с массивами -->
+
 ```javascript
 Array.prototype.stoppableReduce = function(callback, defaultAccumulator) {
   let accumulator =
