@@ -118,3 +118,10 @@ function cloneDeep(obj) {
 # 
 
 <!-- TODO: https://gist.github.com/artalar/1aa8becb645ebc202a82fa587fe2ecb8 -->
+
+<!--
+TODO:
+Почему итерации по "keys1" всегда медленнее чем итерации по "keys2", если массивы должны быть идентичны по структуре и элементам?
+https://jsperf.com/34g346gh454g34f
+Ответ в конце статьи https://mrale.ph/blog/2015/04/12/jsunderhood.html
+-->
