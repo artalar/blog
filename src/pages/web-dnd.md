@@ -40,13 +40,19 @@ _Pointer Events_ описывают работу с "прикосновения"
 
 Другие (в частности FF) в ходе операции перетаскивания требуют [отправки данных](https://www.html5rocks.com/ru/tutorials/dnd/basics/#toc-dataTransfer)
 
+Mozilla и Firefox поддерживают ряд возможностей, которые выходят за рамку стандартной модели спецификации. Они позволяют пользователю перемещать несколько элементов и перемещать нестроковые данные. Для детальной информации смотрите [Dragging and Dropping Multiple Items](https://developer.mozilla.org/en-US/docs/DragDrop/Dragging_and_Dropping_Multiple_Items).
+
 Помните о том, что не все элементы могут быть целью (например, изображения).
+
+Запомните, что только drag-события срабатывают на протяжении операции перемещения; события мыши, такие как mousemove - нет. Также запомните, что события dragstart и dragend не срабатывают при попытке перенести файл из операционной системы в браузер.
+
+> Перекрытие фантомным элементом может остановить DnD, если новый элемент окажется под мышью
 
 ### Материалы по теме
 
 - Учебник на русском https://learn.javascript.ru/drag-and-drop
 - Спека - https://html.spec.whatwg.org/multipage/dnd.html#dnd
-- **Подробное введение** - https://www.html5rocks.com/ru/tutorials/dnd/basics/#toc-dataTransfer
+- **Подробное введение** - https://www.html5rocks.com/ru/tutorials/dnd/basics
 - Пример - https://habr.com/post/125424/
 - UX - https://habr.com/post/216737/
 - Сортировка без jQuery - https://habr.com/company/mailru/blog/207048/
@@ -144,6 +150,14 @@ _Pointer Events_ описывают работу с "прикосновения"
   > поведение по умолчанию - выделение
 
 ### DnD в HTML5
+
+<!-- 
+https://developer.mozilla.org/ru/docs/Web/Guide/HTML/Drag_and_drop
+https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Recommended_drag_types
+https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations
+https://html.spec.whatwg.org/multipage/dnd.html#dnd
+https://www.html5rocks.com/ru/tutorials/dnd/basics/
+ -->
 
 > Новые методы
 
