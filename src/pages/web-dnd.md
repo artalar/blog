@@ -165,13 +165,31 @@ https://www.html5rocks.com/ru/tutorials/dnd/basics/
 В стандарте HTML5 появилась спецификация для нативной работы с перетаскиванием блоков-элементов, текста и, даже, файлов из других окон ОС. Все это реализуется через новые события и их инстанс - Drag Event.
 
 #### Свойства Drag Event
-- Drag Data
+- Drag Data:
+    - все drag-события имеют свойство `dataTransfer` конструктора [DataTransfer](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer) в котором описаны перемещаеммые данные и их тип
+    - при перетаскивании ссылок или картинок в dataTransfer по умолчанию помещается их ссылка, при перемещении выделения - его текст.
 - Drag Feedback Image
 - Drag Effects
 - Drop Targets
 - Mozilla и Firefox поддерживают [Dragging and Dropping Multiple Items](https://developer.mozilla.org/en-US/docs/DragDrop/Dragging_and_Dropping_Multiple_Items)
 
 #### Новые события
+
+В новом стандарте по умолчанию ссылки, картинки и выделенный текст являются перетаскиваемыми. Что бы сделать перетаскиваемым какой-то другой блок, необходимо соблюсти 3 условия:
+- Установить элементу атрибут `draggable="true"`
+- Установить обработчик событий для `dragstart`
+    > обработчик может быть установлен выше, т.к. `dragstart` всплывает
+- Установить drag data в обработчике `dragstart`:
+  > ```html
+        <div
+            draggable="true"
+            ondragstart="event.dataTransfer.setData('text/plain', 'Мета-данные')"
+        >
+            Этот текст можно перетащить, но нельзя выделить
+        </div>
+    ```
+
+> Что бы сделать ссылки или картинки не перетаскиваемыми необходимо установить атрибут `draggable="false"`
 
 > Когда происходит перетаскивание Mouse события не срабатывают.
 
