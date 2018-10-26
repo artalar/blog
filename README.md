@@ -1,4 +1,4 @@
-* ### Хардкорные доклады по фронту и программированию в общем](https://github.com/artalar/blog/blob/master/src/pages/hardcore-frontend-notes)
+* ### [Хардкорные доклады по фронту и программированию в общем](https://github.com/artalar/blog/blob/master/src/pages/hardcore-frontend-notes)
 * ### [Разные заметки](https://github.com/artalar/blog/blob/master/src/pages/notes.md)
 * ### [Структура React-компонента](https://github.com/artalar/blog/blob/master/src/pages/react-component-structure.md)
 * ### [Про UI-киты](https://github.com/artalar/blog/blob/master/src/pages/currently-best-ui-kits.md)
