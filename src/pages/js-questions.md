@@ -115,7 +115,32 @@ function cloneDeep(obj) {
 ```
 -->
 
-# 
+# 8
+
+Что будет в каждом из случаев?
+
+```javascript
+// 1 
+({
+  set value(d) { throw new Error('wrong way') },
+  value: null,
+});
+
+// 2
+Object.assign(
+  {set value(d) { throw new Error('wrong way') }},
+  {value: null},
+);
+
+// 3
+{
+  ...({set value(d) { throw new Error('wrong way') }}),
+  ...({value: null}),
+}```
+
+<!-- throw во втором случае -->
+
+#
 
 <!-- TODO: https://gist.github.com/artalar/1aa8becb645ebc202a82fa587fe2ecb8 -->
 
