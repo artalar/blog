@@ -136,9 +136,24 @@ Object.assign(
 {
   ...({set value(d) { throw new Error('wrong way') }}),
   ...({value: null}),
-}```
+}
+```
 
 <!-- throw во втором случае -->
+
+# 9
+
+Реализуйте функцию `f`, что бы вывод был `1, 2, 3`
+
+```javascript
+console.log(1)
+await f()
+console.log(3)
+```
+
+<!-- 
+var f = () => ({ then(r){ console.log(2); r() } })
+-->
 
 #
 
