@@ -1,5 +1,10 @@
 ![](../assets/work_In_progress.png)
 
+> TODO: https://dev.opera.com/articles/javascript-array-extras-in-detail/
+> TODO: https://codeburst.io/all-about-javascript-arrays-in-1-article-39da12170b1c
+> TODO: https://twitter.com/coderitual/status/1007398281847148544
+> TODO: https://habr.com/company/ruvds/blog/358306/
+
 # Эффективная обработка данных с функциями высшего порядка
 
 ## Приветствиие
