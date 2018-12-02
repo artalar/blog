@@ -4,7 +4,7 @@
 
 ### Семантика
 
-![](lost-chapters-of-frontend-book/2018-12-02-18-57-16.png)
+![](lost-chapters-of-frontend-book/semantics-description.png)
 
 Под семантикой в языке подразумевается **смысловое значение**, т.е. наличие семантики - это наличие явности выражения мысли.
 
