@@ -185,6 +185,7 @@ Mozilla и Firefox поддерживают ряд возможностей, к�
     With the dragenter and dragover event, the dropEffect property is initialized to the effect that the user is requesting. The user can modify the desired effect by pressing modifier keys. Although the exact keys used vary by platform, typically the Shift and Control keys would be used to switch between copying, moving, and linking. The mouse pointer will change to indicate which operation is desired; for instance, for a copy, the cursor might appear with a plus sign next to it.
     -->
 - Drop Targets
+    - Что бы пометить элемент, как принимающий перетаскивание, ему необходимо установить обработчики для `dragenter` и / или `dragover` и в них выполнить `event.preventDefault()`
 - Mozilla и Firefox поддерживают [Dragging and Dropping Multiple Items](https://developer.mozilla.org/en-US/docs/DragDrop/Dragging_and_Dropping_Multiple_Items)
 
 #### Новые события

@@ -6,9 +6,17 @@
   "dependencies": {
     "yaspeller": "^4.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "mdx-deck": "^1.8.2",
+    "mdx-loader": "^2.2.1"
+  },
   "scripts": {
-    "test": "yaspeller src/pages -e '.md'"
+    "test": "yaspeller src/pages -e '.md'",
+    "start": "mdx-deck src/web-dnd/introduction/index.md"
   },
   "repository": {
     "type": "git",
