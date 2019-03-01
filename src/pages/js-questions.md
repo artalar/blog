@@ -159,6 +159,7 @@ var f = () => ({ then(r){ console.log(2); r() } })
 
 Напишите функцию с максимальным соотношением к общему коду слов зарезервированных в ЯП. Разрешено использовать одно слово единожды.
 
+<!--
 ```javascript
 async function* f() { return yield await void class extends Map {} }
 -->
