@@ -4,10 +4,14 @@
 - Если вы новичек и вам не понятен эффектор - это норм, тоже самое происходит со многими людьми с редаксом
 - Все СТМ плохие, но авторы библиотек - хорошие, они построили абстракции, которые вы не замечаете
 - pull VS push
+- Обсерваблы - это про потоки, еффектор про данные
+- В отличии от MobX не требует декораторов, классов, .set() .get(), значительно меньше в размере, декларативен
 - Ромбы, глитчи, ленивость
+- Проблемы мобыкса: рантайм семантика и прокси
+- Помимо компиляции и рантайма у кода есть как бы еще одна фаза - инициализация
 - Пример с displayName - тесты и код на гитхабе
 - Сравнить с мобыксом и редаксом, обсерваблами. Может упомянуть перечень других библиотек
-- Графы, leftist heap tree, statefull
+- Графы, leftist heap tree, statefull, топологическая сортировка возможно только в DAG
 - (вопрос) здесь математика нужна? - нет
 - (вопрос) будут ли девтулзы? - уже в разработке и они потенциально мощнее редаксовских
 - (вопрос) в Redux-Saga есть очень клевые штуки аля "takeEvery" / "takeLatest", что есть в эффекторе? - эффектор, в первую очередь, про данные (как и редакс), хотя позволяет легко строить поверх событий сложные асинхронные взаимосвязи
@@ -34,28 +38,17 @@
 - евенты императивные и суммарно все не очень похоже на классический EE
 - sample и getState (примеры из tips)
 - Поддержка браузеров с Map и Set очень хорошая
+- application state VS [view] module state
+- доказательство тривиально и предоставляется слушателю https://2ch.pm/ch/src/1/15144575254230.jpg
 
-```js
-const updateFirstName = createEvent();
+> ядро эффектора оперирует семантикой, в принципе не доступной обсерваблам, ни приоритизации, ни самого понятия побочных эффектов в спеке обсерваблов просто нет (@ZeroBias)
 
-const firstName = createStore("John").on(updateFirstName, (_, name) => name);
-const lastName = createStore("Doe");
+> Эффектор - это способ описания [сложных] взаимосвязей между данными
 
-const IsFirstNameShort = firstName.map(v => v.length < 10);
+https://codesandbox.io/s/effector-comparison-r9qy2
 
-const fullName = combine(firstName, lastName, `${fn} ${ln}`);
-
-const displayName = combine(
-  firstName,
-  IsFirstNameShort,
-  fullName,
-  (firstName, isFirstNameShort, fullName) =>
-    isFirstNameShort ? fullName : firstName
-);
-
-displayName.watch(view);
-
-
-// fullName = `${firstName} ${lastName}`
-// displayName = isFirstNameShort && fullName || firstName
-```
+> - https://wiki2.org/en/Reactive_programming
+> - http://dist-prog-book.com/chapter/3/message-passing.html
+> - http://pchiusano.blogspot.com/2010/01/actors-are-not-good-concurrency-model.html
+> - http://www.craftinginterpreters.com/contents.html we are here: Control Flow
+> - [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
