@@ -1,6 +1,8 @@
+<!--
 ## Введение
 
 У нас прошел воркшоп, на котором было множество вопросов. Я решил собрать их все вместе и поэтапно ответить на них. Будет интересно начинающим: мы разберем что такое реактивность и какие проблемы она решает, познакомимся с эффектором с нуля. Опытным разработчикам тоже будет интересно: поговорим про проблемы реактивности (в частности в Rx.js), причем тут графы, и немного про архитектуру.
+-->
 
 ## План
 
@@ -8,10 +10,12 @@
   - [Канал](https://www.youtube.com/channel/UCdkZ6ckHOJ3DjAYxoGeMG0w/videos)
   - [RU чат эффектора в тлг](https://t.me/effector_ru)
   - Мемы: доказательство тривиально и предоставляется слушателю https://2ch.pm/ch/src/1/15144575254230.jpg, [effector promo](https://t.me/effector_ru/26937)
+  - Under the hood
+    - redux-act -> most -> графы (топологическая, тарьян) -> сигналы + leftist heap tree (DAG-free). [we are here: Control Flow](http://www.craftinginterpreters.com/contents.html)
   - Об авторе и ментейнерах, баз фактор
 - Про СТМ (стейт-менеджер) в целом
   - Global shared object -> DataBase (transactions) -> state-manager (reactions)
-  - Множество абстракций не заметны
+  - Множество абстракций не заметны. Идеального инструмента нет и не будет, но есть перечень проблем которые необходимо решить.
   - [Remove "Redux itself is very simple"](https://github.com/reduxjs/redux/pull/2950)
   - Проблемы или необходимые обязанности:
     - производительный (компиляция / инициализация / реакция)
@@ -35,8 +39,6 @@
     - удобный SSR или управления локальностью (инстансами)
 - ^ Redux / Observable / MobX / Effector
 - Пример с [displayName](https://codesandbox.io/s/effector-comparison-r9qy2) (diamond problem)
-- Under the hood
-  - redux-act -> most -> графы (топологическая, тарьян) -> сигналы + leftist heap tree (DAG-free) -> [we are here: Control Flow](http://www.craftinginterpreters.com/contents.html)
 - Проблемы
   > все тоже самое что и у **Observable**
   - statefull - сложности с SSR и локальностью
