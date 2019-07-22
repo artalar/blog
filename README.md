@@ -3,6 +3,7 @@
 * ### [Документация проекта](https://github.com/artalar/blog/blob/master/src/pages/pdroject-docs.md)
 * ### [Структура React-компонента](https://github.com/artalar/blog/blob/master/src/pages/react-component-structure.md)
 * ### [Именование коммитов](https://github.com/artalar/blog/blob/master/src/pages/commits-naming.md)
+* ### [Управление зависимостями](https://github.com/artalar/blog/blob/master/src/pages/dependencies.md)
 * ### [Новое API `React.createContext`](https://github.com/artalar/blog/blob/master/src/pages/new-react-context.md)
 * ### [Про styled-components](https://github.com/artalar/blog/blob/master/src/pages/styled-components.md)
 * ### [Разные заметки](https://github.com/artalar/blog/blob/master/src/pages/notes.md)
