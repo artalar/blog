@@ -26,3 +26,4 @@ jobs:
         uses: artalar/gha-hashnode-publish@alpha
         with:
           hashnodeAuth: ${{ secrets.HASHNODE_AUTH }}
+          hashnodeUsername: artalar
