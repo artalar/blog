@@ -23,7 +23,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Publish posts to Hashnode
-        uses: artalar/gha-hashnode-publish
+        uses: artalar/gha-hashnode-publish@main
         with:
           hashnodeAuth: ${{ secrets.HASHNODE_AUTH }}
           hashnodeUsername: artalar
