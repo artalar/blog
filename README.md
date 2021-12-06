@@ -1,4 +1,3 @@
-<!-- * ### [Хардкорные доклады по фронту и программированию в общем](https://github.com/artalar/blog/blob/master/src/pages/hardcore-frontend-notes) -->
 * ### [Формальная и интуитивная семантика ЯП на примерах JS и JSX](https://github.com/artalar/blog/blob/master/src/pages/semantics-in-programming.md)
 * ### [Документация проекта](https://github.com/artalar/blog/blob/master/src/pages/pdroject-docs.md)
 * ### [Структура React-компонента](https://github.com/artalar/blog/blob/master/src/pages/react-component-structure.md)
