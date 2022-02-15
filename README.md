@@ -1,3 +1,6 @@
+Вся активность, теперь, тут: https://t.me/artalog !!1!
+
+
 * ### [Формальная и интуитивная семантика ЯП на примерах JS и JSX](https://github.com/artalar/blog/blob/master/src/pages/semantics-in-programming.md)
 * ### [Документация проекта](https://github.com/artalar/blog/blob/master/src/pages/pdroject-docs.md)
 * ### [Структура React-компонента](https://github.com/artalar/blog/blob/master/src/pages/react-component-structure.md)
