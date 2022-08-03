@@ -370,7 +370,7 @@ const some = some$.get()
 
 ## Сравнение
 
-![](https://docs.google.com/spreadsheets/d/1i4M01SoyqC7VKwvRq1BLPGx0U_Qq29DB0ObfGIblUC0)
+![link to excel](https://docs.google.com/spreadsheets/d/1i4M01SoyqC7VKwvRq1BLPGx0U_Qq29DB0ObfGIblUC0)
 
 
 <!-- 
@@ -391,9 +391,9 @@ const some = some$.get()
 
 <!-- ##### Event / Action / Command / Reactions
 
-[![event driven design](./sm-architecture/photo_2021-02-11_2015.54.17.jpeg)](https://youtu.be/1hwuWmMNT4c)
+[![event driven design](./sm-architecture/event-driven-design.jpeg)](https://youtu.be/1hwuWmMNT4c)
 
-[![commands vs events](./sm-architecture/photo_2021-02-11_2015.54.21.jpeg)](https://youtu.be/1hwuWmMNT4c)
+[![commands vs events](./sm-architecture/commands-vs-events.jpeg)](https://youtu.be/1hwuWmMNT4c)
 
 Стоит немного оговориться и уточнить, как правильнее разделять и понимать семантику каких-то действий: события или экшена и в чем их разница. -->
 
